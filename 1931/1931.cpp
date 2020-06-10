@@ -34,10 +34,14 @@ int main()
 
     for(int i=0; i<n; i++)
     {
-        end <=
+        if(end <= t[i][0])
+        {
+            cnt++;
+            end = t[i][1];
+        }
     }
 
-
+    cout << cnt << '\n';
 
 
     return 0;
