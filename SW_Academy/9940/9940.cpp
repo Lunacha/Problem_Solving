@@ -1,35 +1,46 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
-bool arr[100000];
+bool arr[100000] = {false,};
+int t;
 int n;
 int a;
-bool ans = true;
 
 int main()
 {
-    cin >> n;
+    cin >> t;
 
-    for(int i =0; i=n; i++)
+    for(int h =0; h<t; h++)
     {
-        scanf("%d", a);
-        arr[a-1] = true;
-    }
+        cin >> n;
+        bool ans = true;
 
-    for(int i =0; i=n; i++)
-    {
-        if(!arr[i])
+        for(int i =0; i<n; i++)
         {
-            ans = false;
-            break;
+            cin >> a;
+            arr[a-1] = true;
         }
+
+        for(int i =0; i<n; i++)
+        {
+            if(!arr[i])
+            {
+                ans = false;
+                break;
+            }
+        }
+
+        if(ans)
+            printf("Yes\n");
+        else
+            printf("No\n");
+        
+        memset(arr,false,sizeof(bool)*n);
     }
 
-    if(ans)
-        printf("Yes\n");
-    else
-        printf("No\n");
+    
     
 
     return 0;
